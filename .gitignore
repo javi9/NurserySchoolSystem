@@ -2,4 +2,4 @@
 *.DS_Store
 *.swp
 *.out
-db_config.php
+db_config.php*
