@@ -1,0 +1,11 @@
+
+<?php
+
+$dsn = 'localhost';
+$nombre_usuario = 'josemlp';
+$contraseña = '1234';
+$opciones = array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+); 
+
+?>
