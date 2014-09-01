@@ -25,7 +25,15 @@ class guarderia{
 
 
 			
-					if ($_GET["mode"]=="login"){echo "login";die;}   //comprobamos que el usuario es correcto....
+					if ($_GET["mode"]=="login"){
+						
+						require_once "./app/db/login.php";
+						if (verificar_login($_POST["user"], $_POST["pass"], $result)){  echo "login";die;}
+						else { echo "no login";die; }
+
+
+
+					}   //comprobamos que el usuario es correcto....
     			
         			$loader = new Twig_Loader_Filesystem('templates');
 					$twig = new Twig_Environment($loader);

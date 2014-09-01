@@ -4,17 +4,19 @@
            
  function verificar_login($user, $password, &$result) {
     
+    
     include 'db_config.php';
 
-    $conectar = mysql_connect($dsn,$nombre_usuario,$contraseña);
+    $db = new PDO($dsn,$nombre_usuario,$contraseña);
     
-    mysql_select_db('login',$conectar);
+
    
     $sql = "SELECT * FROM `guarderia`.`login` WHERE `alias`='$user' AND `password`='$password'";
-    //ejecucion de la sentencia anterior
-    $ejecutar_sql=mysql_query($sql,$conectar);
+
+
+    $ejecutar_sql= $db->query($sql);
     
-    if (mysql_num_rows($ejecutar_sql)!=0){
+    if ($ejecutar_sql->rowCount()>0){
         
         session_start();
         
