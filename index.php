@@ -9,9 +9,8 @@
 <?php
 
 require_once 'app/guarderia.class.php';
-
-echo "hola";	
-//guarderia::run();	
+	
+guarderia::run();	
 
 
 ?>
